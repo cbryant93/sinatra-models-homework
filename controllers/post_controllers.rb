@@ -11,4 +11,15 @@ class PostsController < Sinatra::Base
       register Sinatra::Reloader
   end
 
-end 
+  get '/users' do
+
+
+
+      erb :'users/index'
+
+  end
+
+
+
+
+end
