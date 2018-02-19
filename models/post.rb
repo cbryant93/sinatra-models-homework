@@ -43,12 +43,11 @@ end
 
       conn = self.open_connection
 
-      sql = "SELECT * FROM post WHERE id = #{id} LIMIT 1"
+      sql = "SELECT * FROM users WHERE id = #{id} LIMIT 1"
 
-      # PG always returns an array
+
       posts = conn.exec(sql)
 
-      # bind just the first and return
       post = self.hydrate posts[0]
 
       post
