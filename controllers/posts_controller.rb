@@ -13,9 +13,9 @@ class PostsController < Sinatra::Base
 
   get '/users' do
 
+  @posts = Post.all
 
-
-      erb :'users/index'
+  erb :'users/index'
 
   end
 

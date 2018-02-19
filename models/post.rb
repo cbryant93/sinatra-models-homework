@@ -12,7 +12,7 @@ class Post
 
     conn = self.open_connection
 
-    sql = "SELECT id, title, body FROM post ORDER BY id"
+    sql = "SELECT * FROM users ORDER BY id"
 
     results = conn.exec(sql)
 
@@ -20,11 +20,22 @@ class Post
       self.hydrate tuple
     end
 
-  posts
+    posts
 
   end
 
+  def self.hydrate post_data
 
+  post = Post.new
 
+  post.id = post_data['id']
+  post.first_name = post_data['first_name']
+  post.last_name = post_data['last_name']
+  post.email = post_data['email']
+  post.ip_address = post_data['ip_address']
+
+  post
+
+end
 
 end
