@@ -54,6 +54,16 @@ end
 
 end
 
+def self.destroy id
+
+  conn = self.open_connection
+
+  sql = "DELETE FROM users where id = #{id}"
+
+  conn.exec(sql)
+
+end
+
   def self.hydrate post_data
 
   post = Post.new

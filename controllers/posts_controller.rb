@@ -82,14 +82,11 @@ end
 
 delete '/users/:id'  do
 
-  # get the ID
   id = params[:id].to_i
 
-  # delete the user from the database
-  # $users.delete_at(id)
+
   Post.destroy id
 
-  # redirect back to the homepage
   redirect "/users"
 
 end
