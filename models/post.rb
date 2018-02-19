@@ -2,6 +2,21 @@ class Post
 
   attr_accessor :id, :first_name, :last_name, :email, :ip_address
 
+  def save
+
+  conn = Post.open_connection
+
+  if(!self.id)
+    sql = "INSERT INTO users (first_name , last_name, email, ip_address) VALUES ( '#{self.first_name}', '#{self.last_name}', '#{self.email}', '#{self.ip_address}')"
+  else
+    sql = "UPDATE users SET first_name='#{self.first_name}', last_name='#{self.last_name}', email='#{self.email}', ip_address='#{self.ip_address}' WHERE id = #{self.id}"
+  end
+
+  conn.exec(sql)
+
+end
+
+
   def self.open_connection
 
     conn = PG.connect( dbname: "mockaroo" )
@@ -23,6 +38,22 @@ class Post
     posts
 
   end
+
+  def self.find id
+
+      conn = self.open_connection
+
+      sql = "SELECT * FROM post WHERE id = #{id} LIMIT 1"
+
+      # PG always returns an array
+      posts = conn.exec(sql)
+
+      # bind just the first and return
+      post = self.hydrate posts[0]
+
+      post
+
+end
 
   def self.hydrate post_data
 

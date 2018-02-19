@@ -1,0 +1,29 @@
+<form action="/users/<%= @post.id %>" method="POST">
+  <div>
+    <label>Name</label>
+    <input type="text" name="first_name" placeholder="Enter your name" value="<%= @post.first_name %>">
+  </div>
+
+  <div>
+    <label>Surname</label>
+    <textarea name="last_name"><%= @post.last_name %></textarea>
+  </div>
+
+  <div>
+    <label>Email</label>
+    <textarea name="email"><%= @post.email %></textarea>
+  </div>
+
+  <div>
+    <div>
+      <label>Email</label>
+      <textarea name="ip"><%= @post.ip_address %></textarea>
+    </div>
+
+    <div>
+    <input type="submit" value="Save">
+  </div>
+  <% if(@post.id) %>
+    <input type="hidden" name="_method" value="PUT">
+  <% end %>
+</form>
