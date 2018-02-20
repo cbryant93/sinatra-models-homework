@@ -1,0 +1,9 @@
+<h1><%= @pet.name %></h1>
+<p><%= @pet.colour %></p>
+
+<a href="/pets/<%= @pet.id %>/edit">edit</a>
+
+<form action="/pets/<%= @pet.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete">
+</form>

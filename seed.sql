@@ -18,3 +18,21 @@ insert into users (first_name, last_name, email, gender, ip_address) values ('G�
 insert into users (first_name, last_name, email, gender, ip_address) values ('Mårten', 'Bromell', 'tbromell7@ucoz.com', 'Male', '192.187.69.16');
 insert into users (first_name, last_name, email, gender, ip_address) values ('Stéphanie', 'Crippen', 'ycrippen8@senate.gov', 'Male', '0.60.180.49');
 insert into users (first_name, last_name, email, gender, ip_address) values ('Laurène', 'Tomaszczyk', 'gtomaszczyk9@ehow.com', 'Male', '41.139.80.107');
+
+DROP TABLE IF EXISTS pets;
+
+  create table pets (
+    id SERIAL PRIMARY KEY,
+  	name VARCHAR(50),
+  	colour VARCHAR(50)
+  );
+  insert into pets (name, colour) values ('Otter, african clawless', 'Yellow');
+  insert into pets (name, colour) values ('Blue racer', 'Teal');
+  insert into pets (name, colour) values ('Australian brush turkey', 'Teal');
+  insert into pets (name, colour) values ('Rufous tree pie', 'Orange');
+  insert into pets (name, colour) values ('Common brushtail possum', 'Indigo');
+  insert into pets (name, colour) values ('Giant anteater', 'Fuscia');
+  insert into pets (name, colour) values ('Flamingo, roseat', 'Violet');
+  insert into pets (name, colour) values ('Malay squirrel (unidentified)', 'Orange');
+  insert into pets (name, colour) values ('Yellow-billed stork', 'Teal');
+  insert into pets (name, colour) values ('Indian peacock', 'Teal');
