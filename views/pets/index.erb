@@ -1,0 +1,8 @@
+<h1>Welcome to the homepage</h1>
+
+<% @pets.each do |pet| %>
+<div>
+  <h3><a href="/pets/<%= pet.id %>"><%= pet.name %></a></h3>
+
+</div>
+<% end %>

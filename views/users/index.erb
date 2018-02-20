@@ -1,0 +1,9 @@
+
+<h1>Welcome to the homepage</h1>
+
+<% @posts.each do |post| %>
+<div>
+  <h3><a href="/users/<%= post.id %>"><%= post.first_name %></a></h3>
+
+</div>
+<% end %>
